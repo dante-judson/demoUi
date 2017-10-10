@@ -11,11 +11,12 @@ import {ConfirmationService} from 'primeng/primeng';
 })
 export class ListaContatoComponent implements OnInit {
 
+  
   contatos = [];
   contatoSelecionado;
   msgs:Message[] = [];
   constructor(private service:ContatoServiceService,private confirmationService: ConfirmationService) { 
-   
+   this.contatoSelecionado = {id:0};
   }
 
   listaAll(){
@@ -45,5 +46,6 @@ export class ListaContatoComponent implements OnInit {
       this.listaAll();
     });
   }
+
 
 }

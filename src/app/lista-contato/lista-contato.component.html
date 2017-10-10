@@ -26,7 +26,7 @@
           </ng-template>
       </p-dataTable>
       <br>
-      <button pButton class="ui-button-primary" label="Editar"  style="width: 20%"></button>
+      <button pButton class="ui-button-primary" label="Editar" [routerLink]="['/editar']" [queryParams]="{id : contatoSelecionado.id}" style="width: 20%"></button>
       <button pButton class="ui-button-danger" label="Excluir" (click)="confirmar()" style="width: 20%"></button>
     </p-panel>
     
