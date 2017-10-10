@@ -1,16 +1,60 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { NgModel,FormsModule } from '@angular/forms';
+import {ToolbarModule,MenuModule,MenuItem,ButtonModule,InputTextModule,PanelModule,InputSwitchModule,InputMaskModule,
+  DataTableModule,SharedModule,GrowlModule,ConfirmDialogModule,ConfirmationService } from 'primeng/primeng';
+import {HttpClientModule} from '@angular/common/http';
+import {ContatoServiceService} from './services/contato-service.service';
+
 
 import { AppComponent } from './app.component';
+import { CadatroContatoComponent } from './cadatro-contato/cadatro-contato.component';
+import { ListaContatoComponent } from './lista-contato/lista-contato.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { EditaContatoComponent } from './edita-contato/edita-contato.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CadatroContatoComponent,
+    ListaContatoComponent,
+    ToolbarComponent,
+    EditaContatoComponent
   ],
   imports: [
-    BrowserModule
+    ConfirmDialogModule,
+    GrowlModule,
+    HttpClientModule,
+    DataTableModule,
+    SharedModule,
+    FormsModule,
+    InputMaskModule,
+    InputSwitchModule,
+    PanelModule,
+    InputTextModule,
+    ButtonModule,
+    MenuModule,
+    ToolbarModule,
+    BrowserAnimationsModule,
+    BrowserModule,
+    RouterModule.forRoot([
+      {
+        path:'listar',
+        component:ListaContatoComponent
+      },
+      {
+        path:'cadastrar',
+        component:CadatroContatoComponent
+      },
+      {
+        path:'editar',
+        component:EditaContatoComponent
+      }
+    ])
   ],
-  providers: [],
+  providers: [ContatoServiceService,ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

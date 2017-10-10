@@ -1,0 +1,35 @@
+
+<div class="ui-g ui-fluid">
+  <div class="ui-g-10 ui-g-offset-1">
+      <p-growl [(value)]="msgs"></p-growl>
+      <p-confirmDialog header="Confirmação" icon="fa fa-question-circle" width="425"></p-confirmDialog>
+      
+    <p-panel header="Lista de Contatos"> 
+     <br>
+      <span class="ui-float-label">
+          <input #filtro type="text" pInputText  style="width: 40%">  
+          <label for="nome">Pesquisar</label>                  
+        </span>   
+
+      <p-dataTable selectionMode="single" [(selection)]="contatoSelecionado" [value]="contatos" [responsive]=true [globalFilter]="filtro">
+          <p-column field="nome" header="Nome" sortable="true"></p-column>
+          <p-column field="telefone" header="Telefone" sortable="true"></p-column>
+          <p-column field="cpf" header="CPF" sortable="true"></p-column>
+          <p-column field="endereco" header="Endereço" sortable="true"></p-column>
+          <p-column field="status" header="Status" sortable="true">
+            <ng-template let-contato="rowData" pTemplate type="body">
+              {{ contato.status == true ? "Ativo" : "Inativo" }}
+            </ng-template>
+          </p-column>
+          <ng-template pTemplate="emptymessage">
+              Nenhum Contato Encontrado
+          </ng-template>
+      </p-dataTable>
+      <br>
+      <button pButton class="ui-button-primary" label="Editar"  style="width: 20%"></button>
+      <button pButton class="ui-button-danger" label="Excluir" (click)="confirmar()" style="width: 20%"></button>
+    </p-panel>
+    
+  </div>
+  
+</div>

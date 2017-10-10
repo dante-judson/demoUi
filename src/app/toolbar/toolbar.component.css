@@ -1,0 +1,7 @@
+.ui-button-icon-only {
+    border-radius: 5px !important;
+    max-width: 70px !important;
+    min-width: 20px !important;
+    width: 70px;
+    height: 70px;
+}

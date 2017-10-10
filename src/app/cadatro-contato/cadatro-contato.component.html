@@ -1,0 +1,56 @@
+<div class="ui-g ui-fluid">
+
+  <div class="ui-g-12">
+
+      <p-growl [(value)]="msgs"></p-growl>
+
+    <div class="ui-lg-5 ui-lg-offset-3">
+
+      <p-panel>
+        <p-header>
+          <i class="fa fa-plus"></i> Cadastrar Contato
+        </p-header>
+
+        <div class=ui-lg-12>
+          <span class="ui-float-label">
+                  <input type="text" pInputText  id="nome" [(ngModel)]="contato.nome">  
+                  <label for="nome">Nome</label>                  
+                </span>
+        </div>
+
+        <div class=ui-lg-12>
+          <span class="ui-float-label">
+                <p-inputMask type="text"  mask="999.999.999-99" [(ngModel)]="contato.cpf" id="cpf"></p-inputMask>
+                <label for="cpf">CPF</label>                  
+              </span>
+        </div>
+
+        <div class=ui-lg-12>
+          <span class="ui-float-label">
+              <input type="text" pInputText id="endereco" [(ngModel)]="contato.endereco">  
+              <label for="enderco">Endereço</label>                  
+            </span>
+        </div>
+
+        <div class=ui-lg-12>
+          <span class="ui-float-label">
+            <p-inputMask type="text" mask="(99) 99999-9999" id="telefone" [(ngModel)]="contato.telefone"></p-inputMask>
+            <label for="telefone">Telefone</label>                  
+          </span>
+        </div>
+
+        <div class="ui-lg-12">
+            <p-inputSwitch onLabel="Ativo" offLabel="Inativo" id="status" [(ngModel)]="contato.status"></p-inputSwitch>            
+        </div>
+
+        <div class="ui-lg-4 ui-lg-offset-4">
+          <button pButton class="ui-button-success" label="Cadastrar" (click)="submit()"></button>
+        </div>
+
+      </p-panel>
+
+    </div>
+
+  </div>
+
+</div>
