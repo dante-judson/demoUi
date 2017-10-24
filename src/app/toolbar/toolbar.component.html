@@ -1,12 +1,12 @@
 <p-toolbar>
 
   <div class="ui-toolbar-group-left">
-    <img src ="../../assets/img/logo.png" style="width: 50%">
+    <img src ="../../assets/img/logo.png" style="width: 60%">
   </div>
 
   <div class="ui-toolbar-group-right">
     <p-menu #menu popup="popup" [model]="itens"></p-menu>      
-    <button pButton type="button" class="ui-button-secondary ui-button-icon-only" icon="fa-bars fa-2x" (click)="menu.toggle($event)">
+    <button pButton type="button" class="ui-button-secondary" icon="fa-bars" (click)="menu.toggle($event)">
     </button>
   </div>
 

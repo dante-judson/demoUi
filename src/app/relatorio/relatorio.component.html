@@ -1,0 +1,20 @@
+<h3>Relatório de Atividade</h3>
+<hr>
+<div class="ui-g ui-fluid">
+    <div class="ui-lg-6 ui-sm-12">
+<p-chart type="doughnut" [data]="data"></p-chart>
+</div>
+<div class="ui-lg-6 ui-sm-12">
+        <p-chart type="pie" [data]="data"></p-chart>
+</div>
+<div class="ui-lg-8 ui-lg-offset-2">
+        <p-dataTable [value]="sintetico" [responsive]="true">
+            <p-column field="situacao" header="Situação">
+                <ng-template let-s="rowData" pTemplate type="body">
+                    {{s.situacao == true? "Ativo" : "Inativo"}}
+                </ng-template>
+            </p-column>
+            <p-column field="count" header="Quantidade"></p-column>
+        </p-dataTable>
+    </div>
+</div>
